@@ -22,7 +22,7 @@ const Stories = () => {
     };
 
     fetchData();
-  }, []); 
+  });
 
   return (
     <div className="container mt-4">
@@ -31,7 +31,7 @@ const Stories = () => {
           <div key={story.title} className="col-md-4 mb-4">
             <div className="card">
               <img
-                src={story.multimedia[0]?.url} 
+                src={story.multimedia[0]?.url}
                 className="card-img-top"
                 alt={story.title}
               />
