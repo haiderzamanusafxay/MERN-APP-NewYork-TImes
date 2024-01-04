@@ -1,13 +1,3 @@
-// import { useState } from "react";
-// export const Stories = () => {
-//     const [stories, setStories] = useState([]);
-//   const data = fetch(
-//     "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=3VOtaRJxLi1C4WJG0F7SY9mVxKneowzL"
-//   ).then((res) => res.json()).then((data) => setStories(data));
-//   console.log(stories);
-//   return <div>Stories</div>;
-// };
-
 import React, { useState, useEffect } from "react";
 
 const Stories = () => {
@@ -18,7 +8,6 @@ const Stories = () => {
       try {
         const response = await fetch(
           "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=3VOtaRJxLi1C4WJG0F7SY9mVxKneowzL"
-          // Replace 'YOUR_API_KEY' with your actual API key from the New York Times developer portal
         );
 
         if (!response.ok) {
@@ -33,7 +22,7 @@ const Stories = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures the effect runs once when the component mounts
+  }, []); 
 
   return (
     <div className="container mt-4">
@@ -42,7 +31,7 @@ const Stories = () => {
           <div key={story.title} className="col-md-4 mb-4">
             <div className="card">
               <img
-                src={story.multimedia[0]?.url} // Assuming the first multimedia item is an image
+                src={story.multimedia[0]?.url} 
                 className="card-img-top"
                 alt={story.title}
               />
